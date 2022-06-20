@@ -10,12 +10,22 @@
 
         <p>Комментарии</p>
         <hr>
-        <p>Добавить комментарий</p>
-        <form adtion="" mathod="POST"
-            {% csrf_token %}
-                {{ form.as_p }}
+<!--        <p>Добавить комментарий</p>-->
+        <ul>
+            {% for item in get_news.comments_news.all %}
+            <li>
+                Дата: {{item.create_date}} <br>
+                Автор: {{item.author}} <br>
+                {{item.text}}
+            {% endfor %}
+            </li>
+        </ul>
+        <form adtion="" method="post"
+              {% csrf_token %}
+<!--              {{ form.as_p }}-->
+            <input type="text" name="comment" placeholder="Комментарий" class="form-control"><br>
             <button form="create" type="submit" class="btn btn-prymary">Добавить комментарий</button>
         </form>
-        </div>
+<!--            <button form="create" type="submit" class="btn btn-prymary">Добавить комментарий</button>-->
     </div>
 {% endblock %}

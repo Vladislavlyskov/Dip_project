@@ -15,7 +15,7 @@ def news(request):
 
 class NewsDetailView(FormMixin, DetailView):
     model = News
-    template_name = 'main_app/datails_view.html'
+    template_name = 'main_app/details_view.html'
     context_object_name = 'news'
     form_class = CommentForm
 
