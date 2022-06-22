@@ -1,78 +1,58 @@
 body {
-  background: #ff9999;
-  margin: 0;
+    background: #ff9999;
 }
 
 aside {
-  position: fixed;
-  /* float: left; */
-  background: #181818;
-  width: 30%;
-  /* padding-left: 2%; */
-  height: 100vh;
-  color: #fff;
-  /* border-right: 5px solid #; */
+    float: left;
+    background: #181818;
+    width: 30%;
+    padding: 2%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #
 }
 
 aside h3 {
-  margin-top: 50px;
-  font-size: 30px;
-  padding-left: 30px;
+    margin-top: 50px;
+    font-size: 30px;
 }
 
-aside ul {
-  list-style: none;
-}
+aside ul {list-style: none}
 
 aside ul li {
-  color: #fff;
-  display: block;
-  margin-top: 30px;
-  transition: transform all 0.6s ease;
+    color: #fff;
+    display: block;
+    margin-top: 30px;
+    transition: transform all .6s ease;
 }
 
-aside ul li:hover,
-aside ul a:hover {
-  color: #eb5959;
-  text-decoration: none;
-  transform: scale(1.05);
-}
-
-.block_content {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 70%;
-  overflow-y: auto;
+aside ul li:hover, aside ul a:hover {
+   color: #eb5959;
+   text-decotation: none;
+   transform: scale(1.05);
 }
 
 main .features {
-  float: left;
-  color: #fff;
-  margin-top: 100px;
-  text-align: center;
-  width: 75;
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    widht: 75;
 }
 
-main .features h1 {
-  font-size: 50ps;
-}
-main .features p {
-  max-width: 400px;
-  margin: 20px auto;
-}
+main .features h1 {font-size: 50ps;}
+main .features p {max-width: 400px; margin: 20px auto}
 
 .alert-warning {
-  float: left;
-  clear: both;
-  width: 400px;
-  margin: 20px 34%;
-  text-align: left;
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
 }
 
 form {
-  margin-left: 50%;
-  width: 500px;
-  margin-top: 50px;
+    margin-left: 50%;
+    width: 500px;
+    margin-top: 50px;
 }

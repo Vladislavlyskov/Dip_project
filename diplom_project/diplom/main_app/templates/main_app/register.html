@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "main_app/base.html" %}
 
 {% block title %}Create an account{% endblock %}
 
@@ -6,8 +6,12 @@
     <h1>Create an account</h1>
     <p>Please, sign up using the following form:</p>
     <form action="." method="post">
-        {{ user_form.as_p }}
+        {{ form.as_p }}
         {% csrf_token %}
         <p><input type="submit" value="Create my account"></p>
+
+<!--    <form action="" method="post">{% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <input type="submit" value="Зарегистрировать">-->
     </form>
 {% endblock %}

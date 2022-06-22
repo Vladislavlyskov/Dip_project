@@ -7,6 +7,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.urls import reverse, reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import FormView
 
 
 def news(request):
@@ -56,7 +58,7 @@ def create(request):
     return render(request, 'main_app/create.html', data)
 
 class LoginView(LoginView):
-    template_name = 'login.html'
+    template_name = 'main_app/login.html'
     form_class = LoginForm
     success_url = reverse_lazy('main')
     def get_success_url(self):
@@ -65,7 +67,7 @@ class LoginView(LoginView):
 
 class RegisterUserView(CreateView):
     model = User
-    template_name = 'register.html'
+    template_name = 'main_app/register.html'
     form_class = RegisterUserForm
     success_usr = reverse_lazy('main')
 
@@ -80,5 +82,7 @@ class RegisterUserView(CreateView):
 
 class LagoutView(LogoutView):
     pass
+
+
 
 
