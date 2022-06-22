@@ -5,13 +5,19 @@
 {% block content %}
     <h1>Create an account</h1>
     <p>Please, sign up using the following form:</p>
-    <form action="." method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
+<!--    <form action="." method="POST">-->
+<!--        {% csrf_token %}-->
+<!--<!-        {{ form.as_p }-->
+<!--        <input type="login" name="username" placeholder="Введите Ваш логин" class="form-control"><br>-->
+<!--        <input type="text" name="password"  placeholder="Введите пароль" class="form-control"><br>-->
 
-<!--    <form action="" method="post">{% csrf_token %}-->
+<!--        <p><input type="submit" value="Зарегестрировать"></p>-->
+
+    <form action="" method="post">
+        {% csrf_token %}
 <!--        {{ form.as_p }}-->
-<!--        <input type="submit" value="Зарегистрировать">-->
+        <input type="login" name="username" placeholder="Введите Ваш логин" class="form-control"><br>
+        <input type="text" name="password"  placeholder="Введите пароль" class="form-control"><br>
+        <input type="submit" value="Зарегистрировать">
     </form>
 {% endblock %}

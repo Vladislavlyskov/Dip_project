@@ -61,8 +61,8 @@ class LoginView(LoginView):
     template_name = 'main_app/login.html'
     form_class = LoginForm
     success_url = reverse_lazy('main')
-    def get_success_url(self):
-        return self.success_url
+    # def get_success_url(self):
+    #     return self.success_url
 
 
 class RegisterUserView(CreateView):
@@ -80,7 +80,8 @@ class RegisterUserView(CreateView):
         return form_valid
 
 
-class LagoutView(LogoutView):
+
+class LogoutView(LogoutView):
     pass
 
 

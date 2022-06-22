@@ -36,9 +36,9 @@ class LoginForm(AuthenticationForm, ModelForm):
     class Meta:
         model = User
         fields = ('username', 'password')
-    def __init__(self, *args, **kwargs):
-        for field in self.fields:
-            self.fields(field).widget.attrs['class'] = 'form-control'
+    # def __init__(self, *args, **kwargs):
+    #     for field in self.fields.values():
+    #         field.widget.attrs['class'] = 'form-control'
 
 class RegisterUserForm(ModelForm):
     class Meta:
@@ -48,12 +48,13 @@ class RegisterUserForm(ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.set_password(self.cleaned.data["password"])
-        if commit:
-            user.save()
-        return user
+    # def save(self, commit=True):
+    #     user = super().save(commit=False)
+    #     user.set_password(self.cleaned.data["password"])
+    #     if commit:
+    #         user.save()
+    #     return user
+
 
 
 
