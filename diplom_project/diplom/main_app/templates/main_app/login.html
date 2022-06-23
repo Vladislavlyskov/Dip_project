@@ -5,63 +5,13 @@
 {% endblock %}
 
 {% block content %}
-
-<!--<!DOCTYPE html>-->
-<!--&lt;!&ndash;[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]&ndash;&gt;-->
-<!--&lt;!&ndash;[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]&ndash;&gt;-->
-<!--&lt;!&ndash;[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]&ndash;&gt;-->
-<!--&lt;!&ndash;[if gt IE 8]>&lt;!&ndash;> <html lang="en"> &lt;!&ndash;<![endif]&ndash;&gt;-->
-<!--<head>-->
-<!--	<meta charset="utf-8">-->
-<!--	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-<!--	<title>Регистрация</title>-->
-<!--	<link rel="stylesheet" href="css/style.css">-->
-<!--	<link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">-->
-<!--	<link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">-->
-<!--	&lt;!&ndash;[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]&ndash;&gt;-->
-<!--</head>-->
-<!--<body>-->
-
-<!--&lt;!&ndash; vladmaxi top bar &ndash;&gt;-->
-<!--    <div class="vladmaxi-top">-->
-<!--        {% csrf_token %}-->
-<!--    <div class="clr"></div>-->
-<!--    </div>-->
-<!--&lt;!&ndash;/ vladmaxi top bar &ndash;&gt;-->
-
-<!--  <section class="container">-->
-<!--    <div class="login">-->
-<!--      <h1>Войти в личный кабинет</h1>-->
-<!--        {% csrf_token %}-->
-<!--      <form method="post" action="main.html">-->
-<!--        <p><input type="email" name="login" value="" placeholder="Логин или Email"></p>-->
-<!--        <p><input type="password" name="password" value="" placeholder="Пароль"></p>-->
-<!--        <p class="remember_me">-->
-<!--          <label>-->
-<!--            <input type="checkbox" name="remember_me" id="remember_me">-->
-<!--            Запомнить меня-->
-<!--          </label>-->
-<!--        </p>-->
-<!--        <p class="submit"><input type="submit" name="commit" value="Войти"></p>-->
-<!--      </form>-->
-<!--    </div>-->
-
-<!--    <div class="login-help">-->
-<!--      <a href="index.html">Забыли пароль?</a> Восстановите его!-->
-<!--    </div>-->
-<!--  </section>-->
-<!--</body>-->
-<!--</html>-->
-
-    <h1 class="mt-4">Авторизация</h1>
-    <p><a href="/"Вернуться назад</a></p>
-
- <form action="" method="post">
+    <h1 class="">Авторизация</h1>
+    <form action="" method="post">
         {% csrf_token %}
-<!--        {{ form.as_p }}-->
+    <!--        {{ form.as_p }}-->
         <input type="login" name="username" placeholder="Введите Ваш логин" class="form-control"><br>
         <input type="text" name="password"  placeholder="Введите пароль" class="form-control"><br>
-<!--        <input type="submit" value="Зарегистрировать">-->
         <button form="" type="submit" class="btn-btn-ptymary ">Добавить</button>
+    </form>
 {% endblock %}
 

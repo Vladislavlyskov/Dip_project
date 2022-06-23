@@ -63,6 +63,12 @@ class LoginView(LoginView):
     success_url = reverse_lazy('main')
     # def get_success_url(self):
     #     return self.success_url
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #
+    #     return dict(list(context.items()))
+    def get_success_url(self):
+        return rezerve_lazy('main')
 
 
 class RegisterUserView(CreateView):
@@ -78,6 +84,11 @@ class RegisterUserView(CreateView):
         aut_user = authenticate(username=username, password=password)
         login(self.request, aut_user)
         return form_valid
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('main')
+
 
 
 
