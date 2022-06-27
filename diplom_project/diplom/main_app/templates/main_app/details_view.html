@@ -12,7 +12,7 @@
         <hr>
 <!--        <p>Добавить комментарий</p>-->
         <ul>
-            {% for item in get_news.comments_news.all %}
+            {% for item in news.comments_news.all %}
             <li>
                 Дата: {{item.create_date}} <br>
                 Автор: {{item.author}} <br>
@@ -20,11 +20,11 @@
             {% endfor %}
             </li>
         </ul>
-        <form adtion="" method="post"
+        <form action="" method="post">
               {% csrf_token %}
 <!--              {{ form.as_p }}-->
-            <input type="text" name="comment" placeholder="Комментарий" class="form-control"><br>
-            <button form="create" type="submit" class="btn btn-prymary">Добавить комментарий</button>
+            <input type="text" name="text" placeholder="Комментарий" class="form-control"><br>
+            <button type="submit" class="btn btn-prymary">Добавить комментарий</button>
         </form>
 <!--            <button form="create" type="submit" class="btn btn-prymary">Добавить комментарий</button>-->
     </div>

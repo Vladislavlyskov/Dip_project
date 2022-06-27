@@ -20,9 +20,15 @@ class News(models.Model):
         verbose_name_plural = 'Новости'
 
 class Comments(models.Model):
+    class Meta:
+        db_table = 'comments'
+        verbose_name = 'Комментарии'
+        verbose_name_plural = 'Комментарии'
     news = models.ForeignKey(News, on_delete = models.CASCADE, verbose_name='Статья', blank = True, null = True,related_name='comments_news' )
     author = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name='Автор комментария', blank = True, null = True )
-    create_date = models.DateTimeField(auto_now=True)
+    create_date = models.DateTimeField(auto_now_add=True)
     text = models.TextField(verbose_name='Текст комментария')
     status = models.BooleanField(verbose_name='Видимость статьи', default=False)
+
+
 

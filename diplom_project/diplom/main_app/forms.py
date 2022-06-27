@@ -63,10 +63,13 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comments
         fields = ('text',)
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields:
-            self.fields[field].widget.attrs['class'] = 'form-control'
-        self.fields['text'].widget = Textarea(attrs={'rows':5})
-
-
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     for field in self.fields.values:
+    #         field.widget.attrs['class'] = 'form-control'
+    #     self.fields['text'].widget = Textarea(attrs={'rows':5})
+    widgets = {
+        "full_text": Textarea(attrs={
+            'class': 'form-control',
+            'placeholder': 'Текст статьи'})
+    }

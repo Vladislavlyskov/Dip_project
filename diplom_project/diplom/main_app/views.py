@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import News
+from .models import News, Comments
 from .forms import NewsForm, LoginForm, RegisterUserForm, CommentForm
 from django.views.generic import DetailView, CreateView
 from django.views.generic.edit import FormMixin
@@ -32,10 +32,10 @@ class NewsDetailView(FormMixin, DetailView):
             return self.form_invalid(form)
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.article = self.get_object()
-        self.object.author = self.request.user
-        self.object.save()
+        obj = form.save(commit=False)
+        obj.news = self.get_object()
+        obj.author = self.request.user
+        obj.save()
         return super().form_valid(form)
 
 
@@ -61,14 +61,12 @@ class LoginView(LoginView):
     template_name = 'main_app/login.html'
     form_class = LoginForm
     success_url = reverse_lazy('main')
-    # def get_success_url(self):
-    #     return self.success_url
-    # def get_context_data(self, *, object_list=None, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #
-    #     return dict(list(context.items()))
     def get_success_url(self):
         return rezerve_lazy('main')
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('main')
 
 
 class RegisterUserView(CreateView):
