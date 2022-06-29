@@ -16,18 +16,21 @@
     <aside>
         <span class="logo"</span>
         <h3>Навигация</h3>
-            {% if request.user.is_authenticated %}
-
-            {% else %}
-
-            {% endif %}
+        {% if request.user.is_authenticated %}
         <ul>
             <a href="main"><li><i class="fa fa-home" aria-hidden="true"></i> Главная</li></a>
-            <a href="login"><li><i class="bi bi-box-arrow-in-right"></i> Войти</li></a>
             <a href="logout"><li><i class="bi bi-box-arrow-in-left"></i> Выйти</li></a>
+            <a href="create"><li><i class="fa fa-plus" aria-hidden="true"></i> Добавить запись</li></a>
+        </ul>
+        {% else %}
+            <ul>
+            <a href="main"><li><i class="fa fa-home" aria-hidden="true"></i> Главная</li></a>
+            <a href="login"><li><i class="bi bi-box-arrow-in-right"></i> Войти</li></a>
+<!--            <a href="logout"><li><i class="bi bi-box-arrow-in-left"></i> Выйти</li></a>-->
             <a href="register"><li><i class="fa fa-registered" aria-hidden="true"></i> Регистрация</li></a>
             <a href="create"><li><i class="fa fa-plus" aria-hidden="true"></i> Добавить запись</li></a>
         </ul>
+        {% endif %}
     </aside>
     <main>
         {% block content %}
